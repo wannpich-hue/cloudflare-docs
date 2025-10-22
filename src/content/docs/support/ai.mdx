@@ -1,15 +1,327 @@
----
-title: Docs AI (Beta)
-tableOfContents: false
-sidebar:
-  order: 2
-  label: Docs AI
-  badge: Beta
-next: false
-prev: false
-feedback: false
----
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ប្រព័ន្ធគ្រប់គ្រងចំណូលចំណាយ - សាកលវិទ្យាល័យ UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Sans+Khmer:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans Khmer', sans-serif;
+        }
+        .koulen {
+            font-family: 'Koulen', cursive;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-4 md:p-8">
+    <!-- Header -->
+    <header class="bg-white rounded-xl shadow-md p-6 mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="koulen text-3xl text-blue-800">ប្រព័ន្ធគ្រប់គ្រងចំណូលចំណាយ</h1>
+                <p class="text-gray-600 mt-2">សាកលវិទ្យាល័យ UI</p>
+            </div>
+            <div class="flex items-center mt-4 md:mt-0">
+                <div class="text-right mr-4">
+                    <p class="font-bold">អ្នកប្រើប្រាស់: វិទ្យាស្ថាន UI</p>
+                    <p class="text-sm text-gray-600">ថ្ងៃទី: ១៥ មេសា ២០២៤</p>
+                </div>
+                <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-user text-blue-600 text-xl"></i>
+                </div>
+            </div>
+        </div>
+    </header>
 
-import DocsAI from "~/components/DocsAI.tsx";
+    <!-- Main Content -->
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Column - Summary and Chart -->
+        <div class="lg:col-span-2 space-y-8">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6 shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-lg">សរុបចំណូល</p>
+                            <h2 class="koulen text-3xl mt-2">១២៥,៦០០,០០០ ៛</h2>
+                            <p class="text-sm mt-2">កើនឡើង ១២% ពីខែមុន</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-money-bill-wave text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl p-6 shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-lg">សរុបចំណាយ</p>
+                            <h2 class="koulen text-3xl mt-2">៨៧,៤០០,០០០ ៛</h2>
+                            <p class="text-sm mt-2">កើនឡើង ៥% ពីខែមុន</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-hand-holding-usd text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6 shadow-md">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-lg">សមតុល្យ</p>
+                            <h2 class="koulen text-3xl mt-2">៣៨,២០០,០០០ ៛</h2>
+                            <p class="text-sm mt-2">សមតុល្យវិជ្ជមាន</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart Section -->
+            <div class="card bg-white rounded-xl shadow-md p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="koulen text-xl text-gray-800">ក្រាហ្វិកចំណូល និងចំណាយ</h2>
+                    <div class="flex space-x-2">
+                        <button class="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg text-sm">ប្រចាំខែ</button>
+                        <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">ប្រចាំត្រីមាស</button>
+                        <button class="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">ប្រចាំឆ្នាំ</button>
+                    </div>
+                </div>
+                <div class="h-80">
+                    <canvas id="financialChart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column - Quick Actions and Recent Transactions -->
+        <div class="space-y-8">
+            <!-- Quick Actions -->
+            <div class="card bg-white rounded-xl shadow-md p-6">
+                <h2 class="koulen text-xl text-gray-800 mb-4">សកម្មភាពរហ័ស</h2>
+                <div class="space-y-3">
+                    <button class="w-full bg-green-100 text-green-700 p-3 rounded-lg flex items-center justify-between hover:bg-green-200 transition-colors">
+                        <span>បន្ថែមចំណូល</span>
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                    <button class="w-full bg-red-100 text-red-700 p-3 rounded-lg flex items-center justify-between hover:bg-red-200 transition-colors">
+                        <span>បន្ថែមចំណាយ</span>
+                        <i class="fas fa-minus-circle"></i>
+                    </button>
+                    <button class="w-full bg-blue-100 text-blue-700 p-3 rounded-lg flex items-center justify-between hover:bg-blue-200 transition-colors">
+                        <span>របាយការណ៍</span>
+                        <i class="fas fa-chart-bar"></i>
+                    </button>
+                    <button class="w-full bg-purple-100 text-purple-700 p-3 rounded-lg flex items-center justify-between hover:bg-purple-200 transition-colors">
+                        <span>ការកំណត់</span>
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Recent Transactions -->
+            <div class="card bg-white rounded-xl shadow-md p-6">
+                <h2 class="koulen text-xl text-gray-800 mb-4">ចំណូលចំណាយថ្មីៗ</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <div>
+                            <p class="font-bold">ការទទួលប្រាក់សិក្សា</p>
+                            <p class="text-sm text-gray-600">១២ មេសា ២០២៤</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-green-700">+១២,០០០,០០០ ៛</p>
+                            <p class="text-sm text-gray-600">ចំណូល</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                        <div>
+                            <p class="font-bold">ប្រាក់ខែបុគ្គលិក</p>
+                            <p class="text-sm text-gray-600">១០ មេសា ២០២៤</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-red-700">-២៥,០០០,០០០ ៛</p>
+                            <p class="text-sm text-gray-600">ចំណាយ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <div>
+                            <p class="font-bold">ការលក់សៀវភៅ</p>
+                            <p class="text-sm text-gray-600">០៥ មេសា ២០២៤</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-green-700">+៣,៥០០,០០០ ៛</p>
+                            <p class="text-sm text-gray-600">ចំណូល</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                        <div>
+                            <p class="font-bold">ថ្លៃសម្ភារៈសិក្សា</p>
+                            <p class="text-sm text-gray-600">០១ មេសា ២០២៤</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-red-700">-១០,០០០,០០០ ៛</p>
+                            <p class="text-sm text-gray-600">ចំណាយ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Transactions Table -->
+    <section class="mt-8">
+        <div class="card bg-white rounded-xl shadow-md p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="koulen text-xl text-gray-800">បញ្ជីចំណូលចំណាយ</h2>
+                <div class="flex space-x-2">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fas fa-filter mr-2"></i>
+                        <span>តម្រង</span>
+                    </button>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fas fa-download mr-2"></i>
+                        <span>ទាញយក</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="text-left p-3">កាលបរិច្ឆេទ</th>
+                            <th class="text-left p-3">ប្រភេទ</th>
+                            <th class="text-left p-3">ការពិពណ៌នា</th>
+                            <th class="text-left p-3">ចំនួនទឹកប្រាក់</th>
+                            <th class="text-left p-3">សកម្មភាព</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-3">១២ មេសា ២០២៤</td>
+                            <td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">ចំណូល</span></td>
+                            <td class="p-3">ការទទួលប្រាក់សិក្សា</td>
+                            <td class="p-3 text-green-700 font-bold">+១២,០០០,០០០ ៛</td>
+                            <td class="p-3">
+                                <button class="text-blue-600 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-600"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">១០ មេសា ២០២៤</td>
+                            <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">ចំណាយ</span></td>
+                            <td class="p-3">ប្រាក់ខែបុគ្គលិក</td>
+                            <td class="p-3 text-red-700 font-bold">-២៥,០០០,០០០ ៛</td>
+                            <td class="p-3">
+                                <button class="text-blue-600 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-600"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">០៥ មេសា ២០២៤</td>
+                            <td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">ចំណូល</span></td>
+                            <td class="p-3">ការលក់សៀវភៅ</td>
+                            <td class="p-3 text-green-700 font-bold">+៣,៥០០,០០០ ៛</td>
+                            <td class="p-3">
+                                <button class="text-blue-600 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-600"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-3">០១ មេសា ២០២៤</td>
+                            <td class="p-3"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">ចំណាយ</span></td>
+                            <td class="p-3">ថ្លៃសម្ភារៈសិក្សា</td>
+                            <td class="p-3 text-red-700 font-bold">-១០,០០០,០០០ ៛</td>
+                            <td class="p-3">
+                                <button class="text-blue-600 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-red-600"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-gray-600 text-sm">
+        <p>ប្រព័ន្ធគ្រប់គ្រងចំណូលចំណាយ - សាកលវិទ្យាល័យ UI © ២០២៤</p>
+    </footer>
 
-<DocsAI client:load />
+    <script>
+        // Initialize Chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('financialChart').getContext('2d');
+            
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា'],
+                    datasets: [
+                        {
+                            label: 'ចំណូល',
+                            data: [12000000, 11500000, 13000000, 12500000, 14000000, 13500000],
+                            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+                            borderColor: 'rgba(34, 197, 94, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'ចំណាយ',
+                            data: [8500000, 9000000, 8700000, 8740000, 9200000, 8800000],
+                            backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                            borderColor: 'rgba(239, 68, 68, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString('km-KH') + ' ៛';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed.y.toLocaleString('km-KH') + ' ៛';
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
